@@ -2,7 +2,6 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![ESP32-C3](https://img.shields.io/badge/Hardware-ESP32--C3-blue.svg)
-![Status](https://img.shields.io/badge/Status-Project_Active-brightgreen.svg)
 
 A custom, solid-state, retro-futuristic handheld game console built around the **Waveshare ESP32-C3-Zero**. 
 
