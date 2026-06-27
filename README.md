@@ -2,9 +2,8 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![ESP32-C3](https://img.shields.io/badge/Hardware-ESP32--C3-blue.svg)
-![Status](https://img.shields.io/badge/Status-Project_Active-brightgreen.svg)
 
-A custom, solid-state, retro-futuristic handheld game console built around the **Waveshare ESP32-C3-Zero**. 
+A custom, solid-state, retro-futuristic handheld game console built around the **Waveshare ESP32-C3-Zero**. 
 
 This project discards the mechanical switches of the 90s for a completely "stealth" modern architecture. Utilizing capacitive touch, deep-sleep power management, and over-the-air (OTA) wireless flashing, it functions like a high-tech smart device disguised as a minimalist 8-bit pocket toy.
 
@@ -37,29 +36,46 @@ This build utilizes "Dead Bug" point-to-point wiring to achieve an ultra-thin pr
 The battery is permanently connected, relying on the ESP32’s RTC controller to maintain a 5µA standby current—allowing for years of shelf life.
 
 * **Power:** Battery -> TP4056 -> ESP32 5V.
-* **Signal Mapping:**
-    * `GPIO 0` -> TTP_LEFT
-    * `GPIO 1` -> TTP_RIGHT
-    * `GPIO 2` -> TTP_DOWN
-    * `GPIO 3` -> TTP_UP
-    * `GPIO 4` -> TTP_ROTATE (Hardware Wake-up)
-    * `GPIO 5` -> BUZZER_SIGNAL
-    * `GPIO 6, 7` -> OLED (SCL/SDA)
+* **Signal Mapping:** * `GPIO 0, 1, 2, 3` -> D-Pad (Left, Right, Down, Up).
+    * `GPIO 4` -> Rotate (Hardware Wake-up).
+    * `GPIO 5` -> Buzzer Signal.
+    * `GPIO 6, 7` -> OLED (SCL/SDA).
 
-### 📌 Pin Mapping Diagram
-```text
-       ┌───────────────────────────┐
-       │     ESP32-C3-Zero         │
-       │                           │
-  GND ─┤─ (GND)       (3V3) ─┤──┬───► VCC Bus (OLED, TTPs, Buzzer)
-  5V  ─┤─ (5V)        (GND) ─┤──┴───► GND Bus
-       │                           │
-GPIO 0 ├──────────► TTP_LEFT       │
-GPIO 1 ├──────────► TTP_RIGHT      │
-GPIO 2 ├──────────► TTP_DOWN       │
-GPIO 3 ├──────────► TTP_UP         │
-GPIO 4 ├──────────► TTP_ROTATE     │
-GPIO 5 ├──────────► BUZZER_SIGNAL  │
-GPIO 6 ├──────────► OLED_SCL       │
-GPIO 7 ├──────────► OLED_SDA       │
-       └───────────────────────────┘
+---
+
+## 🎮 Controls & Gestures
+* **Wake/Turn ON:** Long-press `ROTATE` (1.5s).
+* **Turn OFF:** Long-press `ROTATE` (2.0s).
+* **Start Game:** Single-tap `ROTATE` in Menu.
+* **Jump/Flap:** Tap `UP`.
+* **Toggle Wi-Fi:** Long-press `UP + DOWN` (1.5s).
+
+---
+
+## 🚀 Flashing & Deployment
+
+To deploy the console firmware to your ESP32-C3-Zero, we utilize a streamlined web-based flashing tool.
+
+1. **Access the Portal:** Navigate to the official deployment interface at:
+   [Robonavigators ESP Flasher](https://robonavigators.github.io/)
+   
+2. **Connect Device:** Plug your ESP32-C3-Zero into your computer using a data-capable USB-C cable. 
+   > *Note: Ensure your cable is capable of data transfer, as some USB-C cables are power-only.*
+
+3. **Select & Flash:**
+   * Select Retro_Console firmware from the dashboard.
+   * Click the **Connect** button in your browser to pair with the device.
+   * Click **Install/Flash** to push the firmware directly to the RISC-V processor. 
+
+The web-based tool will automatically handle the baud rate and memory address offsets. Once the progress bar reaches 100%, your console will automatically reboot and start the **Living Eyes** boot animation!
+
+---
+
+## 📄 License
+MIT License
+
+Copyright (c) 2026 Robonavigators
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
