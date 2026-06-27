@@ -2,6 +2,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![ESP32-C3](https://img.shields.io/badge/Hardware-ESP32--C3-blue.svg)
+![Status](https://img.shields.io/badge/Status-Project_Active-brightgreen.svg)
 
 A custom, solid-state, retro-futuristic handheld game console built around the **Waveshare ESP32-C3-Zero**. 
 
@@ -52,10 +53,29 @@ The battery is permanently connected, relying on the ESP32’s RTC controller to
 
 ---
 
+## 🚀 Flashing & Deployment
+
+To deploy the console firmware to your ESP32-C3-Zero, we utilize a streamlined web-based flashing tool.
+
+1. **Access the Portal:** Navigate to the official deployment interface at:
+   [https://robonavigators.github.io/](https://robonavigators.github.io/)
+   
+2. **Connect Device:** Plug your ESP32-C3-Zero into your computer using a data-capable USB-C cable. 
+   > *Note: Ensure your cable is capable of data transfer, as some USB-C cables are power-only.*
+
+3. **Select & Flash:**
+   * Select your hardware target (`ESP32-C3`) from the dashboard.
+   * Click the **Connect** button in your browser to pair with the device.
+   * Click **Install/Flash** to push the firmware directly to the RISC-V processor. 
+
+The web-based tool will automatically handle the baud rate and memory address offsets. Once the progress bar reaches 100%, your console will automatically reboot and start the **Living Eyes** boot animation!
+
+---
+
 ## 📄 License
 MIT License
 
-Copyright (c) 2026 Robonavigators
+Copyright (c) 2026 [Your Name/Handle]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
