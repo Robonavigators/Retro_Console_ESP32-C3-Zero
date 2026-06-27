@@ -2,7 +2,6 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![ESP32-C3](https://img.shields.io/badge/Hardware-ESP32--C3-blue.svg)
-![Status](https://img.shields.io/badge/Status-Project_Active-brightgreen.svg)
 
 A custom, solid-state, retro-futuristic handheld game console built around the **Waveshare ESP32-C3-Zero**. 
 
@@ -64,7 +63,7 @@ To deploy the console firmware to your ESP32-C3-Zero, we utilize a streamlined w
    > *Note: Ensure your cable is capable of data transfer, as some USB-C cables are power-only.*
 
 3. **Select & Flash:**
-   * Select your hardware target (`ESP32-C3`) from the dashboard.
+   * Select Retro_Console firmware on the from the dashboard.
    * Click the **Connect** button in your browser to pair with the device.
    * Click **Install/Flash** to push the firmware directly to the RISC-V processor. 
 
