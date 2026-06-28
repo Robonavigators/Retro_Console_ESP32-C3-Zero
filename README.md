@@ -57,7 +57,7 @@ The battery is permanently connected, relying on the ESP32’s RTC controller to
 To deploy the console firmware to your ESP32-C3-Zero, we utilize a streamlined web-based flashing tool.
 
 1. **Access the Portal:** Navigate to the official deployment interface at:
-   [Robonavigators ESP Flasher](https://robonavigators.github.io/)
+   [Robonavigators ESP Flasher](https://robonavigators.github.io/flash.html)
    
 2. **Connect Device:** Plug your ESP32-C3-Zero into your computer using a data-capable USB-C cable. 
    > *Note: Ensure your cable is capable of data transfer, as some USB-C cables are power-only.*
